@@ -34,3 +34,5 @@ struct Article {
 var like: [Article] = []
 
 
+var currenyUserFirstName = ""
+var currenyUserLastName = ""

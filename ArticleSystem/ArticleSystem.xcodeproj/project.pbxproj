@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7C30CD135356C82641DDA72F /* Pods_ArticleSystem.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24B3B5DA5F2B0CD9E5696FB3 /* Pods_ArticleSystem.framework */; };
 		B2B3637E1F20529B0003451E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B3637D1F20529B0003451E /* AppDelegate.swift */; };
 		B2B363801F20529B0003451E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B3637F1F20529B0003451E /* ViewController.swift */; };
 		B2B363831F20529B0003451E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2B363811F20529B0003451E /* Main.storyboard */; };
@@ -15,9 +16,15 @@
 		B2B363901F2058B40003451E /* AccountManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B3638F1F2058B40003451E /* AccountManager.swift */; };
 		B2B363921F2059730003451E /* userStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B363911F2059730003451E /* userStruct.swift */; };
 		B2B363941F205B410003451E /* SignupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B363931F205B410003451E /* SignupController.swift */; };
+		B2B363961F206C480003451E /* AriticlesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B363951F206C480003451E /* AriticlesController.swift */; };
+		B2B363981F206C7C0003451E /* PublishController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B363971F206C7C0003451E /* PublishController.swift */; };
+		B2B3639A1F2072AF0003451E /* MyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B363991F2072AF0003451E /* MyTableViewCell.swift */; };
+		B2B3639C1F2076170003451E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B2B3639B1F2076170003451E /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		01A4CCE8AE41659FFD69CF7F /* Pods-ArticleSystem.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArticleSystem.release.xcconfig"; path = "Pods/Target Support Files/Pods-ArticleSystem/Pods-ArticleSystem.release.xcconfig"; sourceTree = "<group>"; };
+		24B3B5DA5F2B0CD9E5696FB3 /* Pods_ArticleSystem.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ArticleSystem.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2B3637A1F20529B0003451E /* ArticleSystem.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ArticleSystem.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2B3637D1F20529B0003451E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B2B3637F1F20529B0003451E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -28,6 +35,11 @@
 		B2B3638F1F2058B40003451E /* AccountManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountManager.swift; sourceTree = "<group>"; };
 		B2B363911F2059730003451E /* userStruct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = userStruct.swift; sourceTree = "<group>"; };
 		B2B363931F205B410003451E /* SignupController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupController.swift; sourceTree = "<group>"; };
+		B2B363951F206C480003451E /* AriticlesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AriticlesController.swift; sourceTree = "<group>"; };
+		B2B363971F206C7C0003451E /* PublishController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublishController.swift; sourceTree = "<group>"; };
+		B2B363991F2072AF0003451E /* MyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyTableViewCell.swift; sourceTree = "<group>"; };
+		B2B3639B1F2076170003451E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C7E16453EF875B94461B08B1 /* Pods-ArticleSystem.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArticleSystem.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ArticleSystem/Pods-ArticleSystem.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,17 +47,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C30CD135356C82641DDA72F /* Pods_ArticleSystem.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3CB8B61A7FA1014DDA22A0E1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				24B3B5DA5F2B0CD9E5696FB3 /* Pods_ArticleSystem.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8DD7BE7D8C850076A7CCE128 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C7E16453EF875B94461B08B1 /* Pods-ArticleSystem.debug.xcconfig */,
+				01A4CCE8AE41659FFD69CF7F /* Pods-ArticleSystem.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		B2B363711F20529B0003451E = {
 			isa = PBXGroup;
 			children = (
 				B2B3637C1F20529B0003451E /* ArticleSystem */,
 				B2B3637B1F20529B0003451E /* Products */,
+				8DD7BE7D8C850076A7CCE128 /* Pods */,
+				3CB8B61A7FA1014DDA22A0E1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,11 +96,15 @@
 				B2B3637F1F20529B0003451E /* ViewController.swift */,
 				B2B363931F205B410003451E /* SignupController.swift */,
 				B2B363811F20529B0003451E /* Main.storyboard */,
+				B2B363951F206C480003451E /* AriticlesController.swift */,
+				B2B363991F2072AF0003451E /* MyTableViewCell.swift */,
+				B2B363971F206C7C0003451E /* PublishController.swift */,
 				B2B363911F2059730003451E /* userStruct.swift */,
 				B2B3638F1F2058B40003451E /* AccountManager.swift */,
 				B2B363841F20529B0003451E /* Assets.xcassets */,
 				B2B363861F20529B0003451E /* LaunchScreen.storyboard */,
 				B2B363891F20529B0003451E /* Info.plist */,
+				B2B3639B1F2076170003451E /* GoogleService-Info.plist */,
 			);
 			path = ArticleSystem;
 			sourceTree = "<group>";
@@ -80,9 +116,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B2B3638C1F20529B0003451E /* Build configuration list for PBXNativeTarget "ArticleSystem" */;
 			buildPhases = (
+				E61533D75F143E5F0E5CB494 /* [CP] Check Pods Manifest.lock */,
 				B2B363761F20529B0003451E /* Sources */,
 				B2B363771F20529B0003451E /* Frameworks */,
 				B2B363781F20529B0003451E /* Resources */,
+				867D601A1E5363B141BB02CB /* [CP] Embed Pods Frameworks */,
+				C301659D13586270CC609234 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -133,6 +172,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B2B363881F20529B0003451E /* LaunchScreen.storyboard in Resources */,
+				B2B3639C1F2076170003451E /* GoogleService-Info.plist in Resources */,
 				B2B363851F20529B0003451E /* Assets.xcassets in Resources */,
 				B2B363831F20529B0003451E /* Main.storyboard in Resources */,
 			);
@@ -140,16 +180,67 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		867D601A1E5363B141BB02CB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ArticleSystem/Pods-ArticleSystem-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C301659D13586270CC609234 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ArticleSystem/Pods-ArticleSystem-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E61533D75F143E5F0E5CB494 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		B2B363761F20529B0003451E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				B2B363801F20529B0003451E /* ViewController.swift in Sources */,
+				B2B3639A1F2072AF0003451E /* MyTableViewCell.swift in Sources */,
 				B2B3637E1F20529B0003451E /* AppDelegate.swift in Sources */,
+				B2B363961F206C480003451E /* AriticlesController.swift in Sources */,
 				B2B363901F2058B40003451E /* AccountManager.swift in Sources */,
 				B2B363941F205B410003451E /* SignupController.swift in Sources */,
 				B2B363921F2059730003451E /* userStruct.swift in Sources */,
+				B2B363981F206C7C0003451E /* PublishController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,6 +363,7 @@
 		};
 		B2B3638D1F20529B0003451E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C7E16453EF875B94461B08B1 /* Pods-ArticleSystem.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ArticleSystem/Info.plist;
@@ -284,6 +376,7 @@
 		};
 		B2B3638E1F20529B0003451E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 01A4CCE8AE41659FFD69CF7F /* Pods-ArticleSystem.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ArticleSystem/Info.plist;

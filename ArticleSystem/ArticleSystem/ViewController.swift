@@ -7,10 +7,14 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseAuth
+
 
 class ViewController: UIViewController {
 
-
+    var window: UIWindow?
+    
     @IBOutlet weak var emailTextField: UITextField!
     
     @IBOutlet weak var passwordTextField: UITextField!
@@ -23,7 +27,43 @@ class ViewController: UIViewController {
 
     @IBAction func pressSignIn(_ sender: Any) {
         
-        let signInUser =  UserAccount(email: emailTextField.text!,password: passwordTextField.text! )
+//        let signInUser =  UserAccount(email: emailTextField.text!,password: passwordTextField.text! )
+        
+        if self.emailTextField.text == "" || self.passwordTextField.text == "" {
+            
+            let alertController = UIAlertController(title: "Error", message: "Please enter an email and password.", preferredStyle: .alert)
+            
+            let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            alertController.addAction(defaultAction)
+            self.present(alertController, animated: true, completion: nil)
+            
+        } else {
+            
+            Auth.auth().signIn(withEmail: self.emailTextField.text!, password: self.passwordTextField.text!) { (user, error) in
+                
+                if error == nil {
+                    
+                    self.window = UIWindow(frame: UIScreen.main.bounds)
+                    self.window?.makeKeyAndVisible()
+                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                    let nc = storyboard.instantiateViewController(withIdentifier: "MainNav" )
+                    self.window?.rootViewController = nc
+                    
+                } else {
+                    
+                    // 提示用戶從 firebase 返回了一個錯誤。
+                    let alertController = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
+                    
+                    let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                    alertController.addAction(defaultAction)
+                    
+                    self.present(alertController, animated: true, completion: nil)
+                }
+            }
+        }
+        
+        
+        
 
     }
 
