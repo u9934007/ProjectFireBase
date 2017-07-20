@@ -12,6 +12,9 @@
 		B2B363831F20529B0003451E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2B363811F20529B0003451E /* Main.storyboard */; };
 		B2B363851F20529B0003451E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2B363841F20529B0003451E /* Assets.xcassets */; };
 		B2B363881F20529B0003451E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2B363861F20529B0003451E /* LaunchScreen.storyboard */; };
+		B2B363901F2058B40003451E /* AccountManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B3638F1F2058B40003451E /* AccountManager.swift */; };
+		B2B363921F2059730003451E /* userStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B363911F2059730003451E /* userStruct.swift */; };
+		B2B363941F205B410003451E /* SignupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B363931F205B410003451E /* SignupController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,9 @@
 		B2B363841F20529B0003451E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B2B363871F20529B0003451E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B2B363891F20529B0003451E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B2B3638F1F2058B40003451E /* AccountManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountManager.swift; sourceTree = "<group>"; };
+		B2B363911F2059730003451E /* userStruct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = userStruct.swift; sourceTree = "<group>"; };
+		B2B363931F205B410003451E /* SignupController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,7 +62,10 @@
 			children = (
 				B2B3637D1F20529B0003451E /* AppDelegate.swift */,
 				B2B3637F1F20529B0003451E /* ViewController.swift */,
+				B2B363931F205B410003451E /* SignupController.swift */,
 				B2B363811F20529B0003451E /* Main.storyboard */,
+				B2B363911F2059730003451E /* userStruct.swift */,
+				B2B3638F1F2058B40003451E /* AccountManager.swift */,
 				B2B363841F20529B0003451E /* Assets.xcassets */,
 				B2B363861F20529B0003451E /* LaunchScreen.storyboard */,
 				B2B363891F20529B0003451E /* Info.plist */,
@@ -138,6 +147,9 @@
 			files = (
 				B2B363801F20529B0003451E /* ViewController.swift in Sources */,
 				B2B3637E1F20529B0003451E /* AppDelegate.swift in Sources */,
+				B2B363901F2058B40003451E /* AccountManager.swift in Sources */,
+				B2B363941F205B410003451E /* SignupController.swift in Sources */,
+				B2B363921F2059730003451E /* userStruct.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
