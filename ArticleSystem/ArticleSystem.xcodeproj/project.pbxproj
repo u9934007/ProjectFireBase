@@ -20,6 +20,8 @@
 		B2B363981F206C7C0003451E /* PublishController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B363971F206C7C0003451E /* PublishController.swift */; };
 		B2B3639A1F2072AF0003451E /* MyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B363991F2072AF0003451E /* MyTableViewCell.swift */; };
 		B2B3639C1F2076170003451E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B2B3639B1F2076170003451E /* GoogleService-Info.plist */; };
+		B2B3639E1F20E35E0003451E /* GetArticleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B3639D1F20E35E0003451E /* GetArticleManager.swift */; };
+		B2B363A01F20FC790003451E /* LikesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B3639F1F20FC790003451E /* LikesManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +41,8 @@
 		B2B363971F206C7C0003451E /* PublishController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublishController.swift; sourceTree = "<group>"; };
 		B2B363991F2072AF0003451E /* MyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyTableViewCell.swift; sourceTree = "<group>"; };
 		B2B3639B1F2076170003451E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B2B3639D1F20E35E0003451E /* GetArticleManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetArticleManager.swift; sourceTree = "<group>"; };
+		B2B3639F1F20FC790003451E /* LikesManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LikesManager.swift; sourceTree = "<group>"; };
 		C7E16453EF875B94461B08B1 /* Pods-ArticleSystem.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArticleSystem.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ArticleSystem/Pods-ArticleSystem.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -97,6 +101,8 @@
 				B2B363931F205B410003451E /* SignupController.swift */,
 				B2B363811F20529B0003451E /* Main.storyboard */,
 				B2B363951F206C480003451E /* AriticlesController.swift */,
+				B2B3639D1F20E35E0003451E /* GetArticleManager.swift */,
+				B2B3639F1F20FC790003451E /* LikesManager.swift */,
 				B2B363991F2072AF0003451E /* MyTableViewCell.swift */,
 				B2B363971F206C7C0003451E /* PublishController.swift */,
 				B2B363911F2059730003451E /* userStruct.swift */,
@@ -236,10 +242,12 @@
 				B2B363801F20529B0003451E /* ViewController.swift in Sources */,
 				B2B3639A1F2072AF0003451E /* MyTableViewCell.swift in Sources */,
 				B2B3637E1F20529B0003451E /* AppDelegate.swift in Sources */,
+				B2B3639E1F20E35E0003451E /* GetArticleManager.swift in Sources */,
 				B2B363961F206C480003451E /* AriticlesController.swift in Sources */,
 				B2B363901F2058B40003451E /* AccountManager.swift in Sources */,
 				B2B363941F205B410003451E /* SignupController.swift in Sources */,
 				B2B363921F2059730003451E /* userStruct.swift in Sources */,
+				B2B363A01F20FC790003451E /* LikesManager.swift in Sources */,
 				B2B363981F206C7C0003451E /* PublishController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -406,6 +414,7 @@
 				B2B3638E1F20529B0003451E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -17,10 +17,8 @@ class MyTableViewCell: UITableViewCell {
     @IBOutlet weak var dateLabel: UILabel!
     
     @IBOutlet weak var likesLabel: UILabel!
-    
-    @IBOutlet weak var likeButton: UIButton!
-    
-    @IBOutlet weak var pressLike: UIButton!
-    
+
+    @IBOutlet weak var authorLabel: UILabel!
+
     
 }

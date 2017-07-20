@@ -26,8 +26,7 @@ class ViewController: UIViewController {
 
 
     @IBAction func pressSignIn(_ sender: Any) {
-        
-//        let signInUser =  UserAccount(email: emailTextField.text!,password: passwordTextField.text! )
+
         
         if self.emailTextField.text == "" || self.passwordTextField.text == "" {
             
@@ -43,15 +42,34 @@ class ViewController: UIViewController {
                 
                 if error == nil {
                     
-                    self.window = UIWindow(frame: UIScreen.main.bounds)
-                    self.window?.makeKeyAndVisible()
-                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                    let nc = storyboard.instantiateViewController(withIdentifier: "MainNav" )
-                    self.window?.rootViewController = nc
+                    
+                    Database.database().reference().child("users").observe(.childAdded, with: {
+                        (snapshot) in
+                        // childAdded逐筆呈現
+                        if let userData = snapshot.value as? [String: String]{
+                            if userData["useruid"] == user?.uid {
+                            
+                                currenyUserFirstName = userData["userFirstName"]!
+                                currenyUserLastName = userData["userLastName"]!
+                                currenyUserId = (user?.uid)!
+                                
+                                DispatchQueue.main.async {
+                                    self.window = UIWindow(frame: UIScreen.main.bounds)
+                                    self.window?.makeKeyAndVisible()
+                                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                                    let nc = storyboard.instantiateViewController(withIdentifier: "MainNav" )
+                                    self.window?.rootViewController = nc
+                                    
+                                }
+                                
+                            }
+                            
+                        }
+                        
+                    }, withCancel: nil)
                     
                 } else {
                     
-                    // 提示用戶從 firebase 返回了一個錯誤。
                     let alertController = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
                     
                     let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Firebase
 
 struct UserAccount {
     
@@ -24,15 +25,28 @@ struct Author {
 
 struct Article {
     
-    let title: String
-    let content: String
-    let author: Author
-    let publishDate: Date
-
+    var articleId: String
+    var authorFirstName: String
+    var authorLastName: String
+    var content: String
+    var date: String
+    var title: String
+    
+    init(snapshot: DataSnapshot){
+        let snapshotValue: [String: AnyObject] = (snapshot.value as! [String: AnyObject])
+        self.articleId = snapshotValue["articleId"]! as! String
+        self.authorFirstName = snapshotValue["authorFirstName"]! as! String
+        self.authorLastName = snapshotValue["authorLastName"]! as! String
+        self.content = snapshotValue["content"]! as! String
+        self.date = snapshotValue["date"]! as! String
+        self.title = snapshotValue["title"]! as! String
+    }
+    
 }
 
 var like: [Article] = []
 
-
 var currenyUserFirstName = ""
 var currenyUserLastName = ""
+var currenyUserId = ""
+

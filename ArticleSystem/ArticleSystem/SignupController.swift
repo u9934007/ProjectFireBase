@@ -14,8 +14,9 @@ class SignupViewController: UIViewController {
     
     
     @IBOutlet weak var emailTextField: UITextField!
-
     @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var firstNameTextField: UITextField!
+    @IBOutlet weak var lastNameTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,9 +26,6 @@ class SignupViewController: UIViewController {
     
     @IBAction func pressOK(_ sender: Any) {
         
-        
-//        let signupUser = UserAccount(email: emailTextField.text!,password: passwordTextField.text! )
-        
         if emailTextField.text == "" || passwordTextField.text == "" {
             
             let alertController = UIAlertController(title: "Error", message: "Please enter your email and password", preferredStyle: .alert)
@@ -35,24 +33,53 @@ class SignupViewController: UIViewController {
             alertController.addAction(defaultAction)
             present(alertController, animated: true, completion: nil)
             
+            
+            
+        } else if firstNameTextField.text == "" || lastNameTextField.text == "" {
+        
+            let alertController = UIAlertController(title: "Error", message: "Please enter your Name", preferredStyle: .alert)
+            let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            alertController.addAction(defaultAction)
+            present(alertController, animated: true, completion: nil)
+        
         } else {
             
             Auth.auth().createUser(withEmail: emailTextField.text!, password: passwordTextField.text!) { (user, error) in
                 
-                if error == nil {
-                    print("Signed up success!")
-                    let vc = self.storyboard?.instantiateViewController(withIdentifier: "Main")
-                    self.present(vc!, animated: true, completion: nil)
+                if error != nil {
                     
-                } else {
                     let alertController = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
                     let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
                     alertController.addAction(defaultAction)
                     self.present(alertController, animated: true, completion: nil)
-                    
+                    return
                 }
+                
+                let useruid = user?.uid
+                
+                let reference: DatabaseReference! = Database.database().reference().child("users")
+                // 新增節點資料
+                var userData: [String : String] = [String : String]()
+                userData["useruid"] = useruid!
+                userData["userFirstName"] = self.firstNameTextField.text!
+                userData["userLastName"] = self.lastNameTextField.text!
+                
+                let childRef = reference.childByAutoId() // 隨機生成的節點唯一識別碼，用來當儲存時的key值
+                let userReference = reference.child(childRef.key)
+                
+                userReference.updateChildValues(userData) { (err, ref) in
+                    if err == nil{
+                        
+                        print(ref.description())
+                        print("Signed up success!")
+                        let vc = self.storyboard?.instantiateViewController(withIdentifier: "SignInPage")
+                        self.present(vc!, animated: true, completion: nil)
+                        return
+                    }
+                
+                }
+                
             }
-        
         }
         
         
