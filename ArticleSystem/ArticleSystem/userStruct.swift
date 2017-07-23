@@ -34,7 +34,7 @@ struct Article {
     
     init(snapshot: DataSnapshot){
         let snapshotValue: [String: AnyObject] = (snapshot.value as! [String: AnyObject])
-        self.articleId = snapshotValue["articleId"]! as! String
+        self.articleId = snapshot.key
         self.authorFirstName = snapshotValue["authorFirstName"]! as! String
         self.authorLastName = snapshotValue["authorLastName"]! as! String
         self.content = snapshotValue["content"]! as! String
@@ -46,7 +46,7 @@ struct Article {
 
 var like: [Article] = []
 
-var currenyUserFirstName = ""
-var currenyUserLastName = ""
-var currenyUserId = ""
+var currentUserFirstName = ""
+var currentUserLastName = ""
+var currentUserId = ""
 

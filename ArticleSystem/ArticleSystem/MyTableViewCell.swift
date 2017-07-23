@@ -20,5 +20,7 @@ class MyTableViewCell: UITableViewCell {
 
     @IBOutlet weak var authorLabel: UILabel!
 
+    @IBOutlet weak var likebutton: UIButton!
     
+
 }

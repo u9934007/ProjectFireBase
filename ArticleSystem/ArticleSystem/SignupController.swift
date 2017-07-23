@@ -60,12 +60,11 @@ class SignupViewController: UIViewController {
                 let reference: DatabaseReference! = Database.database().reference().child("users")
                 // 新增節點資料
                 var userData: [String : String] = [String : String]()
-                userData["useruid"] = useruid!
+
                 userData["userFirstName"] = self.firstNameTextField.text!
                 userData["userLastName"] = self.lastNameTextField.text!
-                
-                let childRef = reference.childByAutoId() // 隨機生成的節點唯一識別碼，用來當儲存時的key值
-                let userReference = reference.child(childRef.key)
+
+                let userReference = reference.child(useruid!)
                 
                 userReference.updateChildValues(userData) { (err, ref) in
                     if err == nil{

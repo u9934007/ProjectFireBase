@@ -42,29 +42,35 @@ class ViewController: UIViewController {
                 
                 if error == nil {
                     
-                    
-                    Database.database().reference().child("users").observe(.childAdded, with: {
+                    print((user?.uid)!)
+                    Database.database().reference().child("users").child((user?.uid)!).observe(.childAdded, with: {
                         (snapshot) in
                         // childAdded逐筆呈現
-                        if let userData = snapshot.value as? [String: String]{
-                            if userData["useruid"] == user?.uid {
+                        
+                        if snapshot.key == "userFirstName" {
                             
-                                currenyUserFirstName = userData["userFirstName"]!
-                                currenyUserLastName = userData["userLastName"]!
-                                currenyUserId = (user?.uid)!
-                                
-                                DispatchQueue.main.async {
-                                    self.window = UIWindow(frame: UIScreen.main.bounds)
-                                    self.window?.makeKeyAndVisible()
-                                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                                    let nc = storyboard.instantiateViewController(withIdentifier: "MainNav" )
-                                    self.window?.rootViewController = nc
-                                    
-                                }
-                                
-                            }
+                            currentUserFirstName = snapshot.value as! String
+                        
+                        }else if snapshot.key == "userLastName" {
+                            
+                            currentUserLastName = snapshot.value as! String
+                        
+                        }
+                        
+                        currentUserId = (user?.uid)!
+                        
+                        DispatchQueue.main.async {
+                            self.window = UIWindow(frame: UIScreen.main.bounds)
+                            self.window?.makeKeyAndVisible()
+                            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                            let nc = storyboard.instantiateViewController(withIdentifier: "MainNav" )
+                            self.window?.rootViewController = nc
+                            
+                            
                             
                         }
+                        
+                        
                         
                     }, withCancel: nil)
                     

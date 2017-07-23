@@ -33,8 +33,6 @@ class ArticleManager {
                     
                 }
                 
-                print(dataList)
-                
                 self.delegate?.manager(self, articleArray: dataList)
             }
             

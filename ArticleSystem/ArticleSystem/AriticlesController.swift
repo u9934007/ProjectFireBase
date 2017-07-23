@@ -22,7 +22,6 @@ class ArticlesViewController: UIViewController, ArticleManagerDelegate,UITableVi
 
      override func viewDidLoad() {
         
-
         articleManager.delegate = self
         articleManager.getArticle()
         likesManager.delegate = self
@@ -62,12 +61,94 @@ class ArticlesViewController: UIViewController, ArticleManagerDelegate,UITableVi
         cell.authorLabel.text = "Author: \(articleArrays[indexPath.row].authorFirstName) \(articleArrays[indexPath.row].authorLastName)"
         
         let likes = likesOfArticle[articleArrays[indexPath.row].articleId]
-        
-        
         cell.likesLabel.text = String(describing: likes ?? 0)
+        cell.likebutton.layer.cornerRadius = 4
+        cell.likebutton.layer.borderColor = UIColor.gray.cgColor
+        cell.likebutton.layer.borderWidth = 0.2
+        cell.likebutton.tintColor = UIColor.gray
+        
+        for article in userlikedArticles{
+            
+            if article == articleArrays[indexPath.row].articleId{
+                cell.likebutton.tintColor = UIColor.blue
+                cell.likebutton.layer.borderColor = UIColor.blue.cgColor
+            }
+        
+        }
+        
+        cell.likebutton.tag = indexPath.row
+        cell.likebutton.addTarget(self, action: #selector(handlelike), for: .touchUpInside)
+        
+        self.myTableView.estimatedRowHeight = 100
+        self.myTableView.rowHeight = UITableViewAutomaticDimension
+        
         return cell
 
     }
+    
+    func handlelike(sender: UIButton){
+        
+        if sender.tintColor == UIColor.blue{
+            
+            handledislike(sender: sender)
+            
+            var count = 0
+            for article in userlikedArticles{
+                
+                if article == articleArrays[sender.tag].articleId {
+                    
+                    userlikedArticles.remove(at: count)
+                    
+                }
+                count += 1
+            }
+            
+        
+        } else {
+            
+            let reference: DatabaseReference! = Database.database().reference().child("likes")
+            
+            // 新增節點資料
+            var like: [String : String] = [String : String]()
+            like[currentUserId] = currentUserId
+            
+            let likeReference = reference.child(articleArrays[sender.tag].articleId)
+            
+            likeReference.updateChildValues(like) { (err, ref) in
+                if err == nil{
+                    
+                    print("like!")
+                    sender.tintColor = UIColor.blue
+                    self.likesManager.getLikes(articleId:self.articleArrays[sender.tag].articleId)
+                }
+                
+            }
+            
+        }
+        
+    }
+    
+    func handledislike(sender: UIButton){
+        
+        let reference: DatabaseReference! = Database.database().reference().child("likes").child(articleArrays[sender.tag].articleId)
+        
+        // 新增節點資料
+        let likeReference = reference.child(currentUserId)
+        
+        likeReference.removeValue() { (err, ref) in
+            if err == nil{
+                
+                print("dislike!")
+                sender.tintColor = UIColor.gray
+                self.likesManager.getLikes(articleId:self.articleArrays[sender.tag].articleId)
+                
+            }
+            
+        }
+    
+    }
+    
+    
     
     func manager(_ controller: LikesManager, likeUsers: [String], articleId: String){
         
@@ -75,7 +156,17 @@ class ArticlesViewController: UIViewController, ArticleManagerDelegate,UITableVi
         
         for id in likeUsers {
             
-            if id == currenyUserId{
+            var ok = true
+            
+            for article in userlikedArticles {
+            
+                if article == articleId {
+                    ok = false
+                }
+            
+            }
+            
+            if id == currentUserId && ok {
                 
                 userlikedArticles.append(articleId)
             
