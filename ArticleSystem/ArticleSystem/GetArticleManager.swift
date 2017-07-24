@@ -21,7 +21,7 @@ class ArticleManager {
         
         Database.database().reference().child("articles").observe(.value, with: {
             (snapshot) in
-
+            
             if snapshot.childrenCount > 0 {
                 
                 var dataList: [Article] = [Article]()

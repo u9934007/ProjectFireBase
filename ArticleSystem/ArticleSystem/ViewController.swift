@@ -42,7 +42,7 @@ class ViewController: UIViewController {
                 
                 if error == nil {
                     
-                    print((user?.uid)!)
+                    
                     Database.database().reference().child("users").child((user?.uid)!).observe(.childAdded, with: {
                         (snapshot) in
                         // childAdded逐筆呈現

@@ -34,7 +34,7 @@ class LikesManager {
         
         Database.database().reference().child("likes").child(articleId).observe(.childAdded, with: {
             (snapshot) in
-            print(snapshot)
+
             if let userData = snapshot.value as? String{
                 
                 likeUserArray.append(userData)
@@ -42,7 +42,7 @@ class LikesManager {
             }
             
             self.delegate?.manager(self, likeUsers: likeUserArray, articleId: articleId)
-            print(likeUserArray)
+            
         })
    
     }

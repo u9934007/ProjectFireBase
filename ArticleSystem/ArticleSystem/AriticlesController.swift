@@ -132,7 +132,7 @@ class ArticlesViewController: UIViewController, ArticleManagerDelegate,UITableVi
         
         let reference: DatabaseReference! = Database.database().reference().child("likes").child(articleArrays[sender.tag].articleId)
         
-        // 新增節點資料
+        
         let likeReference = reference.child(currentUserId)
         
         likeReference.removeValue() { (err, ref) in

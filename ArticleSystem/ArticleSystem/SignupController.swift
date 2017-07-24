@@ -69,7 +69,7 @@ class SignupViewController: UIViewController {
                 userReference.updateChildValues(userData) { (err, ref) in
                     if err == nil{
                         
-                        print(ref.description())
+                        
                         print("Signed up success!")
                         let vc = self.storyboard?.instantiateViewController(withIdentifier: "SignInPage")
                         self.present(vc!, animated: true, completion: nil)
